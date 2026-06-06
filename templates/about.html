@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Mushroom KNN</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-seedling me-2"></i>Mushroom KNN
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home me-1"></i>Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/about"><i class="fas fa-info-circle me-1"></i>About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-section" style="padding: 3rem 0;">
+  <div class="container text-center">
+    <h1 class="hero-title"><i class="fas fa-info-circle me-2"></i>About This App</h1>
+    <p class="hero-subtitle">K-Nearest Neighbors for Mushroom Classification</p>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row g-4">
+
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body p-4">
+          <h5 class="card-title text-primary"><i class="fas fa-brain me-2"></i>About the Algorithm</h5>
+          <p>This application uses the <strong>K-Nearest Neighbors (KNN)</strong> algorithm to classify mushrooms as edible or poisonous based on 22 physical characteristics.</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i>Algorithm: KNN (k=5)</li>
+            <li><i class="fas fa-check text-success me-2"></i>Distance Metric: Euclidean</li>
+            <li><i class="fas fa-check text-success me-2"></i>Library: Scikit-Learn</li>
+            <li><i class="fas fa-check text-success me-2"></i>Model Accuracy: <strong>{{ accuracy }}%</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body p-4">
+          <h5 class="card-title text-primary"><i class="fas fa-database me-2"></i>About the Dataset</h5>
+          <p>The dataset is the <strong>UCI Mushroom Dataset</strong>, which contains 8,124 mushroom samples with 22 categorical features.</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check text-success me-2"></i>Total Samples: 8,124</li>
+            <li><i class="fas fa-check text-success me-2"></i>Edible: 4,208 samples</li>
+            <li><i class="fas fa-check text-success me-2"></i>Poisonous: 3,916 samples</li>
+            <li><i class="fas fa-check text-success me-2"></i>Features: 22 categorical attributes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h5 class="card-title text-primary"><i class="fas fa-project-diagram me-2"></i>How KNN Works</h5>
+          <div class="row g-3 mt-1">
+            <div class="col-md-3 text-center">
+              <div class="step-circle">1</div>
+              <p class="mt-2"><strong>Input Features</strong><br><small>Provide 22 mushroom characteristics</small></p>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="step-circle">2</div>
+              <p class="mt-2"><strong>Calculate Distance</strong><br><small>Euclidean distance to all training points</small></p>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="step-circle">3</div>
+              <p class="mt-2"><strong>Find k=5 Neighbors</strong><br><small>Select the 5 nearest mushrooms</small></p>
+            </div>
+            <div class="col-md-3 text-center">
+              <div class="step-circle">4</div>
+              <p class="mt-2"><strong>Majority Vote</strong><br><small>Predict based on neighbor classes</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h5 class="card-title text-primary"><i class="fas fa-code me-2"></i>Tech Stack</h5>
+          <div class="row">
+            <div class="col-md-4">
+              <h6>Backend</h6>
+              <ul>
+                <li>Python 3</li>
+                <li>Flask</li>
+                <li>Scikit-Learn</li>
+                <li>Pandas &amp; NumPy</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h6>Frontend</h6>
+              <ul>
+                <li>HTML5 &amp; CSS3</li>
+                <li>Bootstrap 5</li>
+                <li>Font Awesome</li>
+                <li>JavaScript (Fetch API)</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h6>Deployment</h6>
+              <ul>
+                <li>Railway</li>
+                <li>Procfile (Gunicorn)</li>
+                <li>requirements.txt</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer text-center py-4">
+  <div class="container">
+    <p class="mb-0">
+      <i class="fas fa-seedling me-1"></i>
+      <strong>Mushroom KNN Classifier</strong> &mdash; Tugas 9 Kecerdasan Buatan
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
